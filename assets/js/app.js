@@ -11,7 +11,7 @@ let setupClock = function (){
         mins = now.getMinutes() * 60,
         hours = now.getHours() * 3600;
 
-    console.log(secs, mins, hours);
+    // console.log(secs, mins, hours);
 
     secondsHands.style.animationDelay = "-" + secs + "s";
     minutesHands.style.animationDelay = "-" + mins + "s";
@@ -27,7 +27,15 @@ weatherForm.addEventListener("submit", (event) => {
     let userApiURL = apiURL + userCity;
     // console.log(userApiURL)
     fetch(userApiURL)
-        .then(response => response.json())
+        .then(response => {
+
+            if (response.status === 200){
+                return response.json()
+            }
+            else{
+                return showError()
+            }
+        })
         .then((dataFromAPI) => {
 
             hideLoader();
@@ -78,4 +86,8 @@ let showLoader = () => {
 }
 let hideLoader = () => {
     loader.style.display = "none"
+}
+
+let showError = () => {
+    apiDataContainer.innerHTML = `<div class="error">Your city not exist, or we have trouble with our API</div>`
 }
