@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #fff;
   border-radius: 50%;
 }
-.clock .handHours {
+.clock .clockHours {
   border: 3px solid black;
   position: absolute;
   height: 30%;
@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-animation-duration: 43200s;
           animation-duration: 43200s;
 }
-.clock .handMinutes {
+.clock .clockMinutes {
   border: 1px solid black;
   position: absolute;
   height: 45%;
@@ -212,7 +212,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-animation-duration: 3600s;
           animation-duration: 3600s;
 }
-.clock .handSeconds {
+.clock .clockSeconds {
   border: 1px solid red;
   position: absolute;
   height: 45%;

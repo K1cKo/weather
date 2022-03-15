@@ -2,9 +2,9 @@ let weatherForm = document.querySelector(".weatherForm")
 let apiURL = "http://api.weatherapi.com/v1/forecast.json?key=d0f25a3b42b9469cbc0181037221403&days=7&q="
 let apiDataContainer = document.querySelector(".apiData")
 let loader = document.querySelector(".loader")
-let secondsHands = document.querySelector(".handSeconds"),
-    minutesHands = document.querySelector(".handMinutes"),
-    hoursHands = document.querySelector(".handHours"),
+let secondsHands = document.querySelector(".clockSeconds"),
+    minutesHands = document.querySelector(".clockMinutes"),
+    hoursHands = document.querySelector(".clockHours"),
     now = new Date();
 let setupClock = function (){
     let secs = now.getSeconds(),

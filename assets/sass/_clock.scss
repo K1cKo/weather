@@ -6,7 +6,7 @@
     border-radius: 50%;
 
 
-    .handHours {
+    .clockHours {
         border: 3px solid black;
         position: absolute;
         height: 30%;
@@ -18,7 +18,7 @@
         animation-duration: 43200s;
     }
 
-    .handMinutes {
+    .clockMinutes {
         border: 1px solid black;
         position: absolute;
         height: 45%;
@@ -30,7 +30,7 @@
         animation-duration: 3600s;
     }
 
-    .handSeconds {
+    .clockSeconds {
         border: 1px solid rgb(255, 0, 0);
         position: absolute;
         height: 45%;
