@@ -41,12 +41,22 @@ h1, h2, h3, h4, h5, h6 {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100vh;
+  position: relative;
+}
+.weather .clock {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  -webkit-transform: translate(-50%, -50%) scale(2) rotate(180deg);
+          transform: translate(-50%, -50%) scale(2) rotate(180deg);
 }
 .weather .title {
   margin: 0 0 20px 0;
   font-size: 80px;
+  text-shadow: 0px 0px 9px black;
 }
 .weather .weatherForm {
+  padding: 0 0 10px 0;
   max-width: 500px;
   width: 100%;
 }
@@ -68,13 +78,16 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background-color: rgba(0, 0, 0, 0.459);
   padding: 30px;
   color: #d3d3d3;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 .weather .apiData .mainInfo .degrees {
   display: -webkit-box;
@@ -92,6 +105,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 .weather .apiData .mainInfo .info p:last-of-type {
   margin: 0;
+}
+.weather .apiData .days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.459);
+  padding: 0 0 30px 0;
+  color: #d3d3d3;
+  border-radius: 0 0 10px 10px;
+}
+.weather .apiData .days p {
+  font-size: 24px;
+  text-shadow: 0px 0px 30px #ffff28;
 }
 
 .lds-ripple {
@@ -146,5 +179,78 @@ h1, h2, h3, h4, h5, h6 {
     width: 72px;
     height: 72px;
     opacity: 0;
+  }
+}
+.clock {
+  width: 101px;
+  height: 101px;
+  border: 1px solid #eeeeee;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.clock .handHours {
+  border: 3px solid black;
+  position: absolute;
+  height: 30%;
+  border-radius: 2px;
+  left: 48px;
+  top: 50px;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  -webkit-animation-duration: 43200s;
+          animation-duration: 43200s;
+}
+.clock .handMinutes {
+  border: 1px solid black;
+  position: absolute;
+  height: 45%;
+  border-radius: 2px;
+  left: 50px;
+  top: 50px;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  -webkit-animation-duration: 3600s;
+          animation-duration: 3600s;
+}
+.clock .handSeconds {
+  border: 1px solid red;
+  position: absolute;
+  height: 45%;
+  border-radius: 2px;
+  left: 50px;
+  top: 50px;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  -webkit-animation-duration: 60s;
+          animation-duration: 60s;
+}
+.clock .animation {
+  -webkit-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }

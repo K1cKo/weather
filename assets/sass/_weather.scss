@@ -15,13 +15,22 @@
     justify-content: center;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
+    
+    .clock {
+        position: absolute;
+        top: 50%;
+        right: 15%;
+        transform: translate(-50%, -50%) scale(2) rotate(180deg);
+    }
 
     .title{
         margin: 0 0 20px 0;
         font-size: 80px;
+        text-shadow: 0px 0px 9px rgba(0, 0, 0, 1);
     }
     .weatherForm{
-
+        padding: 0 0 10px 0;
         max-width: 500px;
         width: 100%;
 
@@ -45,11 +54,12 @@
     .apiData{
         .mainInfo{
             display: flex;
+            justify-content: center;
             align-items: center;
             background-color: rgba(0, 0, 0, 0.459);
             padding: 30px;
             color: $mainInfoTextColor;
-            border-radius: 10px;
+            border-radius: 10px 10px 0 0;
 
             .degrees{
                 display: flex;
@@ -69,6 +79,20 @@
                         margin: 0;
                     }
                 }
+            }
+        }
+        .days {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.459);
+            padding: 0 0 30px 0;
+            color: $mainInfoTextColor;
+            border-radius: 0 0 10px 10px;
+            p {
+                font-size: 24px;
+                text-shadow: 0px 0px 30px rgba(255, 255, 40, 1);
             }
         }
     }
